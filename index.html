@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility & Performance Test</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Test Page</h1>
+    </header>
+
+    <!-- Navigation with no aria-label -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Missing alt attribute for images -->
+    <section id="home">
+        <h2>Our Home Section</h2>
+        <img src="kitteh.jpg" width="800" height="600">
+        <p>This image lacks an alt text and is unoptimized.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>This is a section where we talk about our company.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+
+            <!-- Missing label for message -->
+            <textarea id="message" placeholder="Your message here"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Inline script -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted!');
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Test Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>
